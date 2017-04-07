@@ -123,6 +123,7 @@ def main():
         if cfg.local_ssl:
             svr = SecureSocks5Server(cfg.pem_path, cfg.local_addr, FurionHandler)
         else:
+            print cfg.local_addr
             svr = Socks5Server(cfg.local_addr, FurionHandler)
         
         logging.info("Furion server listening on %s, SSL %s, AUTH %s." %
